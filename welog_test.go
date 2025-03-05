@@ -2,9 +2,9 @@ package welog
 
 import (
 	"bytes"
-	"github.com/christiandoxa/welog/pkg/constant/envkey"
-	"github.com/christiandoxa/welog/pkg/constant/generalkey"
-	"github.com/christiandoxa/welog/pkg/infrastructure/logger"
+	"github.com/cruseraca/welog/pkg/constant/envkey"
+	"github.com/cruseraca/welog/pkg/constant/generalkey"
+	"github.com/cruseraca/welog/pkg/infrastructure/logger"
 	"github.com/gin-gonic/gin"
 	"github.com/gofiber/fiber/v2"
 	"github.com/sirupsen/logrus"

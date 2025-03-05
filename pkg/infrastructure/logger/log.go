@@ -5,7 +5,7 @@ package logger
 
 import (
 	"fmt"
-	"github.com/christiandoxa/welog/pkg/constant/envkey"
+	"github.com/cruseraca/welog/pkg/constant/envkey"
 	"github.com/elastic/go-elasticsearch/v8"
 	"github.com/goccy/go-json"
 	"github.com/sirupsen/logrus"
