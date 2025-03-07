@@ -95,15 +95,15 @@ func logger() *logrus.Logger {
 	// Parse hostname
 	host := parsedURL.Hostname()
 
-	hook, err := elogrus.NewElasticHookWithFunc(client, host, logrus.TraceLevel, indexNameFunc)
-	if err != nil {
-		log.Error(err)
-		return log
-	} else {
-		log.Hooks.Add(hook)
-		hook.MessageModifierFunc = ecsLogMessageModifierFunc(&ecslogrus.Formatter{})
-
-	}
+	go func() {
+		hook, err := elogrus.NewElasticHookWithFunc(client, host, logrus.TraceLevel, indexNameFunc)
+		if err != nil {
+			log.Error(err)
+		} else {
+			log.Hooks.Add(hook)
+			hook.MessageModifierFunc = ecsLogMessageModifierFunc(&ecslogrus.Formatter{})
+		}
+	}()
 
 	return log
 }
